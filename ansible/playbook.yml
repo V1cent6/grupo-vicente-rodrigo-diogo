@@ -19,22 +19,10 @@
         state: started
         enabled: yes
 
-    - name: Create a custom index.html
+    - name: Copy custom index.html to Nginx web root
       copy:
-        content: |
-          <!DOCTYPE html>
-          <html>
-          <head>
-              <title>Welcome to Nginx on Azure!</title>
-              <style>
-                  body { font-family: sans-serif; text-align: center; padding: 50px; }
-                  h1 { color: #0078d4; }
-              </style>
-          </head>
-          <body>
-              <h1>Success! Nginx is running on your Azure VM.</h1>
-              <p>Provisioned with Terraform and configured with Ansible.</p>
-          </body>
-          </html>
+        src: index.html  # Nome do ficheiro local
         dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
         mode: '0644'
