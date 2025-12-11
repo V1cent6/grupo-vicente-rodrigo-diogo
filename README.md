@@ -11,6 +11,13 @@ Exercise 1
 2. in the new repositry, make sure that:
    a) a proper index.html file is served by NGINX
    b) make sure passwords are not shown in the Terraform and Ansbile files (they are not visible in the repository)
+      to run this project first you need to put the variables and need to be the same as those in ansible:
+         export TF_VAR_admin_username="nome_de_utilizador_aqui"
+         export TF_VAR_admin_password="palavra_passe_secreta_aqui"
+         terraform plan 
+         terraform apply 
+
+
   
 
 Exercise 2:
