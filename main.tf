@@ -104,8 +104,8 @@ resource "azurerm_linux_virtual_machine" "vm" {
   size                            = "Standard_B2S" # Basic VM size
   network_interface_ids           = [azurerm_network_interface.nic.id]
   disable_password_authentication = false
-  admin_username                  = "azureuser"
-  admin_password                  = "P@sswOrd12345" # **Change this to a strong password and use a variable!**
+  admin_username                  = var.admin_username
+  admin_password                  = var.admin_password # **Change this to a strong password and use a variable!**
 
   os_disk {
     caching              = "ReadWrite"
